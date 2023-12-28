@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --btnblue: #003BE5;
+}
 body {
   background-image: url("../assets//images/blue-background.png");
   background-position:center;

@@ -1,13 +1,12 @@
 import React from "react";
 
-function LogoText() {
+function LogoText({ size }) {
   return (
     <svg
-      width="171"
-      height="97"
       viewBox="0 0 171 97"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={`${size}`}
     >
       <path
         fillRule="evenodd"

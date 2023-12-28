@@ -8,6 +8,8 @@ export const TunesContext = createContext();
 const TunesProvider = ({ children }) => {
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
+  const [user, setUser] = useState({ name: ""});
+
   const queryClient = new QueryClient();
 
   
@@ -41,7 +43,9 @@ const TunesProvider = ({ children }) => {
         favorites,
         setFavorites,
         handleFavorite,
-        isFavorited
+        isFavorited,
+        user,
+        setUser
       }}>
         {children}
       </TunesContext.Provider>
