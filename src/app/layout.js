@@ -17,9 +17,7 @@ export default function RootLayout({ children }) {
           <aside>
             <SideBar />
           </aside>
-          <section>
-            {children}
-          </section>
+          <section className="flex flex-col flex-1">{children}</section>
         </main>
       </body>
     </html>
