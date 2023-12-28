@@ -14,6 +14,10 @@ function SideBar() {
     router.push("/");
   };
 
+  const handleNavigateFavorites = () => {
+    router.push("/favorites");
+  }
+
   return (
     <div className="h-full w-16 sm:w-64 bg-white flex flex-col justify-between items-center">
       <div className="my-7 cursor-pointer" onClick={() => handleNavigateHome()}>
@@ -21,11 +25,11 @@ function SideBar() {
         <span className="sm:hidden"><Logo /></span>
       </div>
       <nav className="flex gap-12 flex-col text-base">
-        <div className="flex gap-6 items-center cursor-pointer">
+        <div className="flex gap-6 items-center cursor-pointer" onClick={() => handleNavigateHome()}>
           <SearchIcon />
           <span className="max-sm:hidden">Search</span>
         </div>
-        <div className="flex gap-6 items-center cursor-pointer">
+        <div className="flex gap-6 items-center cursor-pointer" onClick={() => handleNavigateFavorites()}>
           <FavoritesIcon />
           <span className="max-sm:hidden">Favorites</span>
         </div>

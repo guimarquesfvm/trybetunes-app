@@ -1,7 +1,7 @@
 import React from 'react'
 import SongCard from './song-card';
 
-function SongsList({ songs }) {
+function SongsList({ songs}) {
   return (
     <ul className='w-full xl:w-1/2 items-end justify-start mt-6'>
       {
