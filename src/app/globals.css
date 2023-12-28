@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-image: url("../assets//images/blue-background.png");
+  background-position:center;
+  background-size:cover;
+  background-repeat: no-repeat;
+
+  height: 100vh;
+  width: 100vw;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+}
