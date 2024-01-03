@@ -23,7 +23,7 @@ function Login() {
             type="text"
             placeholder="what's your name?"
             className="border-2 border-[--btnblue] rounded-full h-10 text-center text-[--btnblue] placeholder:text-[--btnblue] text-xl"
-            onChange={(e) => setUser({ name: e.target.value })}
+            onChange={(e) => setUser({...user, name: e.target.value})}
             value={user.name}
           />
           <button 
