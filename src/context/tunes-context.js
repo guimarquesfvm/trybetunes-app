@@ -8,7 +8,18 @@ export const TunesContext = createContext();
 const TunesProvider = ({ children }) => {
   const [inputValue, setInputValue] = useState("");
   const [query, setQuery] = useState("");
-  const [user, setUser] = useState({ name: ""});
+
+  const userMock = {
+    name: "Guest",
+    email: "guest@email.com",
+    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+    maiores voluptas minima cum porro deleniti distinctio tempora
+    doloremque quasi. Incidunt voluptate itaque suscipit aperiam dicta
+    similique eveniet, optio omnis placeat!`,
+    profilePic: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg",
+  }
+  
+  const [user, setUser] = useState(userMock);
 
   const queryClient = new QueryClient();
 
