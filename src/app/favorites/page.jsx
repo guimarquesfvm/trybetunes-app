@@ -12,7 +12,7 @@ function Favorites() {
         <h1 className=" text-2xl lg:text-4xl text-white font-bold">Favorite Songs</h1>
       </div>
       <div className="h-2/3 w-full bg-white  overflow-scroll">
-        <div className="flex items-center justify-center h-full w-full">
+        <div className="flex justify-center h-full w-full">
           <SongsList songs={favorites} />
         </div>
       </div>
