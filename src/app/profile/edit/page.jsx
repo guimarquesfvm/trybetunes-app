@@ -1,9 +1,15 @@
 "use client";
 import { TunesContext } from "@/context/tunes-context";
 import React, { useContext } from "react";
+import { useRouter } from "next/navigation";
 
 function EditProfile() {
   const { user, setUser } = useContext(TunesContext);
+  const router = useRouter();
+
+  const handleNavigateProfilePage = () => {
+    router.push("/profile");
+  }
   return (
     <>
       <div className="flex items-center justify-center flex-1 max-md:flex-col"></div>
@@ -54,7 +60,7 @@ function EditProfile() {
                 onChange={(e) => setUser({ ...user, description: e.target.value })}
               ></textarea>
             </div>
-            <button className="rounded-full bg-[var(--btnblue)] px-6 py-3 text-white font-bold">
+            <button className="rounded-full bg-[var(--btnblue)] px-6 py-3 text-white font-bold" onClick={() => handleNavigateProfilePage()}>
               SAVE
             </button>
           </div>

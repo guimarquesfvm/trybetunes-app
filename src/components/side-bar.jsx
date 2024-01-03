@@ -47,7 +47,7 @@ function SideBar() {
           <span className="max-sm:hidden">Profile</span>
         </div>
       </nav>
-      <div className="flex gap-6 items-center mb-7 cursor-pointer">
+      <div className="flex gap-6 items-center mb-7 cursor-pointer" onClick={() => handleNavigateProfile()}>
         <img src={user.profilePic} alt="" className="size-10" />
         <span className="max-sm:hidden">{user.name}</span>
       </div>
