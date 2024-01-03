@@ -1,6 +1,9 @@
-import React from "react";
+"use client";
+import { TunesContext } from "@/context/tunes-context";
+import React, { useContext } from "react";
 
 function EditProfile() {
+  const { user } = useContext(TunesContext);
   return (
     <>
       <div className="flex items-center justify-center flex-1 max-md:flex-col"></div>
@@ -23,6 +26,7 @@ function EditProfile() {
                 type="text"
                 className="border-b-2 w-72 h-9 p-2 placeholder:text-sm"
                 placeholder="My name is..."
+                value={user.name}
               />
             </div>
             <div>
@@ -32,6 +36,7 @@ function EditProfile() {
                 type="email"
                 className="border-b-2 w-72 h-9 p-2 placeholder:text-sm"
                 placeholder="yourname@email.com"
+                value={user.email}
               />
             </div>
             <div>
@@ -43,6 +48,7 @@ function EditProfile() {
                 rows="10"
                 className="border-b-2 p-2 placeholder:text-sm lg:w-[490px] h-28 resize-none"
                 placeholder="About you"
+                value={user.description}
               ></textarea>
             </div>
             <button className="rounded-full bg-[var(--btnblue)] px-6 py-3 text-white font-bold">
