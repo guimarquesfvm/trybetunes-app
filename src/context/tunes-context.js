@@ -19,7 +19,7 @@ const TunesProvider = ({ children }) => {
     profilePic: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg",
   }
   
-  const [user, setUser] = useState(userMock);
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || userMock);
 
   const queryClient = new QueryClient();
 
@@ -43,6 +43,14 @@ const TunesProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
+
+  useEffect(() => {
+    const userLS = JSON.parse(localStorage.getItem('user'));
+    if (!userLS) {
+      localStorage.setItem('user', JSON.stringify(userMock));
+    }
+    localStorage.setItem('user', JSON.stringify(user));
+  }, [user]);
 
   return (
     <QueryClientProvider client={ queryClient }>
