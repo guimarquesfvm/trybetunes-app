@@ -48,7 +48,7 @@ function SideBar() {
         </div>
       </nav>
       <div className="flex gap-6 items-center mb-7 cursor-pointer">
-        <img src="" alt="" className="size-10" />
+        <img src={user.profilePic} alt="" className="size-10" />
         <span className="max-sm:hidden">{user.name}</span>
       </div>
     </div>

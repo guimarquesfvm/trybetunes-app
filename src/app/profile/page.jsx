@@ -20,15 +20,15 @@ function Profile() {
           <div className="flex-1 lg:ml-9 max-w-lg flex flex-col gap-4 mt-4 items-start">
             <div>
               <h2 className="text-2xl font-bold">Name</h2>
-              <p>{user.name}</p>
+              <p>{user.name || "No name found"}</p>
             </div>
             <div>
               <h2 className="text-2xl font-bold">Email</h2>
-              <p>{user.email}</p>
+              <p>{user.email || "No email found"}</p>
             </div>
             <div>
               <h2 className="text-2xl font-bold">Description</h2>
-              <p>{user.description}</p>
+              <p>{user.description || "No description found"}</p>
             </div>
             <button className="rounded-full bg-[var(--btnblue)] px-6 py-3 text-white font-bold">
               EDIT PROFILE
