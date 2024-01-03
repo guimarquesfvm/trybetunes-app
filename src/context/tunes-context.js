@@ -18,15 +18,17 @@ const TunesProvider = ({ children }) => {
     similique eveniet, optio omnis placeat!`,
     profilePic: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg",
   }
-  
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')) || userMock);
+  const [user, setUser] = useState(userMock);
+  const [favorites, setFavorites] = useState([]);
+
+  useEffect(() => {
+    // made that way to avoid localStorage reference error in terminal, NextJS was setting states before rendering it
+    
+    setUser(JSON.parse(localStorage.getItem('user')) || userMock);
+    setFavorites(JSON.parse(localStorage.getItem('favorites')) || []);
+  }, [])
 
   const queryClient = new QueryClient();
-
-  
-  // made that way to avoid localStorage reference error in terminal, NextJS was setting states before rendering it 
-  const [favorites, setFavorites] = useState(JSON.parse(localStorage.getItem('favorites')) || []);
-
 
   const handleFavorite = (song) => {
     if (favorites.some((el) => el.previewUrl === song.previewUrl)) {
