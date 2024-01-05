@@ -18,6 +18,7 @@ const TunesProvider = ({ children }) => {
     similique eveniet, optio omnis placeat!`,
     profilePic: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg",
   }
+  
   const [user, setUser] = useState(userMock);
   const [favorites, setFavorites] = useState([]);
 
