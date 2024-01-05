@@ -1,4 +1,5 @@
 "use client";
+import useLocalStorage from "@/hooks/useLocalStorage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createContext, useEffect, useState } from "react";
 
@@ -18,16 +19,10 @@ const TunesProvider = ({ children }) => {
     similique eveniet, optio omnis placeat!`,
     profilePic: "https://upload.wikimedia.org/wikipedia/commons/2/2c/Default_pfp.svg",
   }
-  
-  const [user, setUser] = useState(userMock);
-  const [favorites, setFavorites] = useState([]);
 
-  useEffect(() => {
-    // made that way to avoid localStorage reference error in terminal, NextJS was setting states before rendering it
-    
-    setUser(JSON.parse(localStorage.getItem('user')) || userMock);
-    setFavorites(JSON.parse(localStorage.getItem('favorites')) || []);
-  }, [])
+  const [user, setUser] = useLocalStorage("user", userMock);
+  const [favorites, setFavorites] = useLocalStorage("favorites", []);
+
 
   const queryClient = new QueryClient();
 
@@ -42,18 +37,6 @@ const TunesProvider = ({ children }) => {
   };
 
   const isFavorited = (song) => favorites.some((el) => el.previewUrl === song.previewUrl);
-
-  useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-  }, [favorites]);
-
-  useEffect(() => {
-    const userLS = JSON.parse(localStorage.getItem('user'));
-    if (!userLS) {
-      localStorage.setItem('user', JSON.stringify(userMock));
-    }
-    localStorage.setItem('user', JSON.stringify(user));
-  }, [user]);
 
   return (
     <QueryClientProvider client={ queryClient }>

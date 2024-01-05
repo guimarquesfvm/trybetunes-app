@@ -1,10 +1,11 @@
 "use client";
 import SongsList from "@/components/album-page/songs-list";
 import { TunesContext } from "@/context/tunes-context";
+import useLocalStorage from "@/hooks/useLocalStorage";
 import React, { useContext } from "react";
 
 function Favorites() {
-  const { favorites } = useContext(TunesContext);
+  const {favorites} = useContext(TunesContext);
 
   return (
     <>
